@@ -1,0 +1,21 @@
+name: PR Checks
+ 
+on:
+  pull_request:
+    branches: [main]  # Запускать только при создании пул реквеста в ветку main
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Используем GitHub-hosted runner с Ubuntu
+ 
+    steps:
+      - uses: actions/checkout@v3  # Клонирует код из репозитория
+      - name: Установка зависимостей
+        run: npm ci
+
+      - name: Линтинг
+        run: npm run lint
+
+      - name: Тестирование
+        run: npm run test
+      
