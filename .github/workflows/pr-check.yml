@@ -5,7 +5,7 @@ on:
     branches: [main]  # Запускать только при создании пул реквеста в ветку main
  
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest  # Используем GitHub-hosted runner с Ubuntu
  
     steps:
@@ -18,4 +18,3 @@ jobs:
 
       - name: Тестирование
         run: npm run test
-      
