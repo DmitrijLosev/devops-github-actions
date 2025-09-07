@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest  # Используем GitHub-hosted runner с Ubuntu
  
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Сборка
         run: docker build -t ${{ secrets.DOCKER_USER }}/devops-node-starter:${{ github.sha }} . #sha - hash of commit for uniq naming
 
