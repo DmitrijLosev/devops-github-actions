@@ -5,10 +5,10 @@ on:
     branches: [main]  # Запускать только при пуше в ветку main
  
 jobs:
-  checks:
+  check:
     uses: ./.github/workflows/pr-check.yaml
   build:
-    needs: checks
+    needs: check
     runs-on: ubuntu-latest  # Используем GitHub-hosted runner с Ubuntu
  
     steps:
