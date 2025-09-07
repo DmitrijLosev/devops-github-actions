@@ -6,7 +6,7 @@ on:
  
 jobs:
   check:
-    uses: ./.github/workflows/pr-check.yaml
+    uses: ./pr-check.yaml
   build:
     needs: check
     runs-on: ubuntu-latest  # Используем GitHub-hosted runner с Ubuntu
